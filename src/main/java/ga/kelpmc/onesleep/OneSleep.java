@@ -25,11 +25,13 @@ public final class OneSleep extends JavaPlugin implements Listener {
         World wrld = event.getPlayer().getWorld();
         if (!isDay(wrld.getTime())) {
             wrld.setTime(24000);
+            Bukkit.broadcastMessage(event.getPlayer().getDisplayName() + " slept to make it morning!");
         }
         if (wrld.hasStorm()) {
             wrld.setStorm(false);
+            Bukkit.broadcastMessage(event.getPlayer().getDisplayName() + " slept to make the storm go away!");
         }
-        Bukkit.broadcastMessage(event.getPlayer().getDisplayName() + " slept to make it mornign!");
+
     }
 
     @Override
